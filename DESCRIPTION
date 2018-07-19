@@ -1,0 +1,14 @@
+Package: wikiquery
+Type: Package
+Title: A Package that Helps to Explore and Query Wikidata
+Version: 0.1.0
+Author: Lise Vaudor
+Depends:
+    tidyverse,
+    WikidataQueryServiceR
+Maintainer: Lise Vaudor <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: GPLv2
+Encoding: UTF-8
+LazyData: true
