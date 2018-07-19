@@ -1,4 +1,3 @@
-
 get_prefixes <- function(type="wiki"){
   tib=tibble(
     prefix=c("wd",
@@ -10,7 +9,10 @@ get_prefixes <- function(type="wiki"){
              "ps",
              "pq",
              "rdfs",
-             "bd"),
+             "bd",
+             "rdf",
+             "owl",
+             "dc"),
     url=c("http://www.wikidata.org/entity/",
           "http://www.wikidata.org/entity/statement/",
           "http://www.wikidata.org/value/",
@@ -20,6 +22,9 @@ get_prefixes <- function(type="wiki"){
           "http://www.wikidata.org/prop/statement/",
           "http://www.wikidata.org/prop/qualifier/",
           "http://www.w3.org/2000/01/rdf-schema#",
-          "http://www.bigdata.com/rdf#"))
+          "http://www.bigdata.com/rdf#",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+          "http://www.w3.org/2002/07/owl#",
+          "http://purl.org/dc/elements/1.1/"))
   return(tib)
 }

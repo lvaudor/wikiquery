@@ -1,9 +1,14 @@
-rspecify=function(query,...){
-  args <- as.list(match.call())# bricolage revoir tidyeval
-  filters <- map(args[3:length(args)],eval,envir=environment())
-  query <- str_c(query,
-                 "\nWHERE\n{",
-                 str_c(filters,".\n",collapse=""),
-                 "}#endOfWhere")
+rspecify=function(query,spec){
+  spec=str_c(spec,".\n",collapse="")
+  if(!str_detect(query,"endOfWhere")){
+    query <- str_c(query,
+                   "\nWHERE\n{",
+                   spec,
+                   "}#endOfWhere")
+  }else{
+    query <- str_replace(query,
+                         "\\}#endOfWhere",
+                         str_c(spec,"}#endOfWhere"))
+  }
   return(query)
 }

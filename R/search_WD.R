@@ -1,7 +1,7 @@
 search_WD=function(string, language="en", what="itemLabel", partial=FALSE,limit=10){
   query <- rselect("item","itemLabel", "itemDescription") %>% 
-    rspecify("?item rdfs:label ?itemLabel",
-             "?item schema:description ?itemDescription")
+    rspecify("?item rdfs:label ?itemLabel") %>% 
+    rspecify("?item schema:description ?itemDescription")
   if(partial){
     query <- query %>% 
       rfilter(condition=str_c('REGEX(?',
